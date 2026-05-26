@@ -2,7 +2,22 @@
     text-align: center;
     margin: auto;
     max-width: 80%;
-    border-top: 1px solid #989898;
-    padding: 15px 0px ;
-    font-size: 13px;
+    border-top: 1px solid rgba(76, 84, 255, 0.2);
+    padding: 40px 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 80px;
+    transition: all 0.3s ease;
+}
+
+.footer:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer p {
+    background: linear-gradient(90deg, rgba(76, 84, 255, 0.1), rgba(255, 100, 200, 0.1));
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(76, 84, 255, 0.1);
 }
