@@ -17,12 +17,25 @@ if(historicalData.prices){
 },[historicalData])
 
   return (
-   <Chart
-   chartType='LineChart'
-   data={(data)}
-   height="100%"
-   legendToggle
-   />
+   <div style={{ width: '100%', height: '100%' }}>
+     <Chart
+       chartType='LineChart'
+       data={data}
+       width='100%'
+       height='100%'
+       legendToggle
+       options={{
+         chartArea: { width: '85%', height: '75%' },
+         hAxis: { textStyle: { color: '#dce4ff' } },
+         vAxis: { textStyle: { color: '#dce4ff' } },
+         legend: { textStyle: { color: '#dce4ff' } },
+         backgroundColor: 'transparent',
+         colors: ['#4c54ff'],
+         lineWidth: 3,
+         pointSize: 4,
+       }}
+     />
+   </div>
   )
 }
 

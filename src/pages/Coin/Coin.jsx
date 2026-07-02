@@ -83,6 +83,17 @@ return (
     <li>{currency.symbol} {coinData.market_data.low_24h[currency.name].toLocaleString()}</li>
 </ul>
 </div>
+
+<section className="coin-extra-content">
+  <div className="coin-extra-card">
+    <h3>Why this coin matters</h3>
+    <p>Reviewing price history, market capitalization, and key metrics helps readers understand the story behind a digital asset.</p>
+  </div>
+  <div className="coin-extra-card">
+    <h3>Helpful reading</h3>
+    <p>Pair the chart with beginner-friendly blog articles for a stronger learning experience and more time on page.</p>
+  </div>
+</section>
 </div>
   );
 }

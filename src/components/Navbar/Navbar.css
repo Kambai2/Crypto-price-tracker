@@ -63,7 +63,11 @@
     gap: max(1vw, 12px);
 }
 
-.navbar select{
+.currency-picker{
+    position: relative;
+}
+
+.currency-trigger{
     padding: 10px 16px;
     border-radius: 8px;
     border: 2px solid rgba(76, 84, 255, 0.5);
@@ -73,50 +77,85 @@
     font-weight: 500;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.navbar select:hover {
+.currency-trigger:hover {
     border-color: #4c54ff;
     background: rgba(76, 84, 255, 0.2);
 }
 
-.navbar select:focus {
-    outline: none;
-    border-color: #4c54ff;
-    background: rgba(76, 84, 255, 0.3);
-    box-shadow: 0 0 20px rgba(76, 84, 255, 0.3);
+.currency-arrow {
+    color: #8ea2ff;
+    font-size: 0.85rem;
 }
 
-.navbar option{
-    background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%);
+.currency-dropdown{
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 220px;
+    background: rgba(10, 12, 34, 0.95);
+    border: 1px solid rgba(76, 84, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    padding: 10px;
+    z-index: 120;
+}
+
+.currency-search{
+    width: 100%;
+    border: 1px solid rgba(76, 84, 255, 0.25);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
     color: white;
+    padding: 9px 10px;
+    margin-bottom: 8px;
+    outline: none;
 }
 
-.navbar button{
+.currency-search::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.currency-options{
+    display: grid;
+    gap: 6px;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.currency-option{
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #fff;
-    background: linear-gradient(135deg, #4c54ff 0%, #ff64c8 100%);
+    gap: 8px;
+    width: 100%;
+    padding: 8px 10px;
     border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: white;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(76, 84, 255, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    text-align: left;
 }
 
-.navbar button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 35px rgba(76, 84, 255, 0.5);
+.currency-option:hover,
+.currency-option.active {
+    background: rgba(76, 84, 255, 0.18);
 }
 
-.navbar button:active {
-    transform: translateY(0);
+.currency-option small {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+}
+
+.currency-empty {
+    padding: 8px 6px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
 }
 
 @media (max-width: 900px){

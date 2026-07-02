@@ -1,0 +1,394 @@
+.blog-page {
+  --page-bg: linear-gradient(135deg, #060816 0%, #0e1738 100%);
+  --text-color: #f5f7ff;
+  --muted-color: rgba(255, 255, 255, 0.75);
+  --card-bg: rgba(255, 255, 255, 0.06);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --input-bg: rgba(5, 8, 30, 0.45);
+  --input-border: rgba(255, 255, 255, 0.12);
+  --accent: linear-gradient(135deg, #4c54ff 0%, #ff64c8 100%);
+  --accent-strong: #8ea2ff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  --soft-panel: rgba(255, 255, 255, 0.05);
+  padding: 40px 20px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--text-color);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.blog-theme-light {
+  --page-bg: linear-gradient(135deg, #f7faff 0%, #eef3ff 100%);
+  --text-color: #111827;
+  --muted-color: rgba(17, 24, 39, 0.72);
+  --card-bg: rgba(255, 255, 255, 0.94);
+  --card-border: rgba(15, 23, 42, 0.1);
+  --input-bg: #ffffff;
+  --input-border: rgba(15, 23, 42, 0.12);
+  --accent: linear-gradient(135deg, #4c54ff 0%, #ff64c8 100%);
+  --accent-strong: #4c54ff;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  --soft-panel: rgba(76, 84, 255, 0.08);
+}
+
+.blog-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.theme-toggle {
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 999px;
+  padding: 8px 12px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.blog-hero {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  color: var(--accent-strong);
+  margin-bottom: 10px;
+}
+
+.blog-hero h1,
+.faq-heading h2 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  margin-bottom: 12px;
+}
+
+.blog-hero p,
+.posts-heading p,
+.faq-item p,
+.blog-card p {
+  color: var(--muted-color);
+  line-height: 1.7;
+}
+
+.blog-hero-card,
+.blog-form-card,
+.blog-card,
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+
+.blog-hero-card {
+  padding: 24px;
+}
+
+.blog-hero-card h2,
+.blog-form-card h2,
+.posts-heading h2 {
+  margin-bottom: 12px;
+}
+
+.blog-hero-card ul {
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  color: var(--muted-color);
+}
+
+.blog-content {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 24px;
+}
+
+.blog-form-card {
+  padding: 24px;
+  height: fit-content;
+}
+
+.blog-form-card form {
+  display: grid;
+  gap: 12px;
+}
+
+.blog-form-card input,
+.blog-form-card select,
+.blog-form-card textarea {
+  width: 100%;
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  background: var(--input-bg);
+  color: var(--text-color);
+  padding: 12px 14px;
+  font: inherit;
+}
+
+.blog-form-card textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.blog-form-card button {
+  border: none;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.blog-posts {
+  display: grid;
+  gap: 16px;
+}
+
+.posts-heading {
+  margin-bottom: 6px;
+}
+
+.blog-card {
+  padding: 20px;
+}
+
+.blog-card-detail {
+  display: grid;
+  gap: 14px;
+}
+
+.blog-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.blog-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.blog-card-body {
+  margin-top: 10px;
+  color: var(--muted-color);
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.blog-featured-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--soft-panel);
+  border: 1px solid var(--card-border);
+}
+
+.blog-featured-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 1.2rem;
+}
+
+.blog-featured-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--accent-strong);
+  margin-bottom: 4px;
+}
+
+.article-actions {
+  display: flex;
+  align-items: center;
+}
+
+.like-button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  cursor: pointer;
+}
+
+.blog-sections ul {
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  color: var(--muted-color);
+}
+
+.related-posts {
+  display: grid;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.related-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.related-post span {
+  color: var(--accent-strong);
+  font-size: 0.8rem;
+}
+
+.related-post h5 {
+  margin-top: 4px;
+  font-size: 0.98rem;
+}
+
+.related-post button {
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  padding: 8px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.comments-section {
+  display: grid;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.comment-form {
+  display: grid;
+  gap: 10px;
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  background: var(--input-bg);
+  color: var(--text-color);
+  padding: 10px 12px;
+  font: inherit;
+}
+
+.comment-form button {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.comment-list {
+  display: grid;
+  gap: 10px;
+}
+
+.comment-item {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.comment-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+}
+
+.empty-comments {
+  color: var(--muted-color);
+}
+
+.back-button,
+.read-more-button {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.back-button {
+  background: var(--soft-panel);
+  color: var(--text-color);
+}
+
+.read-more-button {
+  margin-top: 10px;
+  background: var(--accent);
+  color: white;
+}
+
+.faq-section {
+  margin-top: 34px;
+  display: grid;
+  gap: 16px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  padding: 16px 18px;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq-item p {
+  margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .blog-hero,
+  .blog-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .blog-page {
+    padding: 24px 14px 80px;
+  }
+
+  .blog-card-top {
+    flex-direction: column;
+  }
+}
